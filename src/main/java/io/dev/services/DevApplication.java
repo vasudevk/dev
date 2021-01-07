@@ -1,4 +1,4 @@
-package io.dev;
+package io.dev.services;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

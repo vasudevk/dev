@@ -1,4 +1,4 @@
-package io.dev.core;
+package io.dev;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +15,9 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
+/**
+ * Demonstrates AES Encryption based on two secret keys
+ */
 public class AESEncryption {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AESEncryption.class);
@@ -22,8 +25,8 @@ public class AESEncryption {
     private static final String SECRET_KEY_1 = "AESEncryptionKy1";
     private static final String SECRET_KEY_2 = "AESEncryptionKy2";
 
-    private IvParameterSpec ivParameterSpec;
-    private SecretKeySpec secretKeySpec;
+    private final IvParameterSpec ivParameterSpec;
+    private final SecretKeySpec secretKeySpec;
     private Cipher cipher;
 
     public AESEncryption() {

@@ -1,4 +1,4 @@
-package io.dev.core;
+package io.dev;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -7,6 +7,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+/**
+ * This is a demo of creating JWT tokens with simple secret key.FP
+ */
 public class JWTUtil {
 
     public static void main(String[] args) {

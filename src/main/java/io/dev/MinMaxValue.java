@@ -1,4 +1,4 @@
-package io.dev.core;
+package io.dev;
 
 /**
  * Find the smallest & largest number in an array
