@@ -23,6 +23,12 @@ public class Variables {
         number /= 2;
         number %= 7;
         System.out.println(number);
+
+        int dividend = 3;
+        int divisor = 2;
+
+        double result = dividend / divisor * 1.0;
+        System.out.println(result);
     }
 
 
