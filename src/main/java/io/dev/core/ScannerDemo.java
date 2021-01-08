@@ -1,4 +1,4 @@
-package io.dev;
+package io.dev.core;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

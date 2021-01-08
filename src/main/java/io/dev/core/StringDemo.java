@@ -1,4 +1,4 @@
-package io.dev;
+package io.dev.core;
 
 public class StringDemo {
 

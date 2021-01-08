@@ -19,4 +19,19 @@ public class Clubs {
         System.out.println("Accessed static field from a non-static context. But not vice-versa");
         return "Arsenal Forever!";
     }
+
+    public static double staticMethod() {
+        /* super & this cannot be used in a static context - uncomment below & check */
+        // String city = this.city;
+        // int hashCode = super.hashCode();
+
+        /* non-static members cannot be reference from a static context */
+        // String s = city;
+        // slogans();
+
+        /* In order to access non-static members instance is needed */
+        String s = new Clubs().captain;
+
+        return 10d;
+    }
 }

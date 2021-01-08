@@ -1,8 +1,8 @@
-package io.dev;
+package io.dev.core;
 
 import io.dev.objects.Clubs;
 
-public class StaticDemo {
+public class StaticDemo implements StaticInterface {
 
     int faWinners = 19;
 
@@ -30,12 +30,20 @@ public class StaticDemo {
 
         StaticDemo staticDemo = new StaticDemo();
         staticDemo.slogans();
+
+        if (StaticInterface.overrideStaticMethodFromInterface()) {
+            System.out.println("Calling static method of an interface using Class name");
+        }
     }
 
     private String slogans() {
-        int fans = Clubs.fans;
         System.out.println("Accessed static field from a non-static context. But not vice-versa. This method is accessed " +
                 "through the instance of this class");
         return "Arsenal Forever!";
+    }
+
+    @Override
+    public void regularMethod() {
+        System.out.println("Overriding non-static method");
     }
 }
