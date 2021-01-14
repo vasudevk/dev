@@ -8,6 +8,8 @@ import java.util.function.Predicate;
 
 public class PredicateDemo {
 
+    static Predicate<String> predicate = p -> p.startsWith("A");
+
     public static void main(String[] args) {
 
         List<String> clubs = new ArrayList<>();
@@ -18,6 +20,8 @@ public class PredicateDemo {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input a character :: ");
         clubs.stream().filter(PredicateContains.containsTheseCharacters(scanner.nextLine())).forEachOrdered(System.out::println);
+
+        clubs.stream().filter(predicate).forEach(System.out::println);
     }
 }
 
