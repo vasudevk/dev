@@ -1,11 +1,21 @@
 package io.dev.functional;
 
+import io.dev.objects.Clubs;
+
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.IntBinaryOperator;
+import java.util.function.IntPredicate;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
+import java.util.stream.IntStream;
 
 public class FunctionDemo {
 
@@ -48,5 +58,33 @@ public class FunctionDemo {
         intBinaryOp.applyAsInt(10, 12);
 
         BiFunction<String, String, Boolean> compareFunc = String::equalsIgnoreCase;
+
+        if (compareFunc.apply("Vasu", "VASU")) {
+            System.out.println("Both are same");
+        }
+
+        BiFunction<String, String, Integer> lenfunc = (i, j) -> (i + j).length();
+
+        System.out.println(lenfunc.apply("Vasu", "Dev"));
+
+        Predicate<Integer> intPred = p -> p.equals(10);
+        var a = new int[]{5, 4, 6, 10};
+        Arrays.stream(a).forEach(x -> System.out.println(intPred.test(x)));
+
+
+        Supplier<String> stringSupplier = () -> "Hello Vasu!";
+        Supplier<List<Object>> listSupplier = () -> {
+            List<Object> list = new ArrayList<>();
+            list.add("Test");
+            list.add(false);
+            list.add(10f);
+            list.add(16d);
+            return list;
+        };
+
+        System.out.println("Supplier :: " + stringSupplier.get());
+        System.out.println("Supplier :: " + listSupplier.get());
+
+        IntBinaryOperator intBinaryOperator = (int x, int y) -> x * y;
     }
 }

@@ -4,11 +4,13 @@ package io.dev.functional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 public class PredicateDemo {
 
     static Predicate<String> predicate = p -> p.startsWith("A");
+    static BiPredicate<String,String> biPredicate = String::startsWith;
 
     public static void main(String[] args) {
 
