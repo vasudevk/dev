@@ -17,6 +17,7 @@ import java.util.Base64;
 
 /**
  * Demonstrates AES Encryption based on two secret keys
+ * Refer - https://owasp.org/www-community/Using_the_Java_Cryptographic_Extensions
  */
 public class AESEncryption {
 
