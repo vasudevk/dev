@@ -2,7 +2,6 @@ package io.dev.functional;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.dev.GenericData;
 import io.dev.objects.Log;
 
 import java.util.ArrayList;
