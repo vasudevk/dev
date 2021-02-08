@@ -14,6 +14,8 @@ public class ArraysDemo {
         x[3] = 5;
         System.out.println(Arrays.toString(x));
 
+        // Find mimimum in a given array
+        System.out.println("Minimum in the array :: " + findMin(x));
 
         var y = new int[][]{{1, 2, 3, 7}, {4, 5, 6}};
         for (var i = 0; i < y.length; i++) {
@@ -38,6 +40,14 @@ public class ArraysDemo {
             }
             System.out.println();
         }
+    }
 
+    static int findMin(int[] array) {
+        int min = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] < Integer.MAX_VALUE)
+                min = array[i];
+        }
+        return min;
     }
 }

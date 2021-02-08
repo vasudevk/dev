@@ -18,8 +18,8 @@ class FinanceController {
     fun companyData(@RequestParam("name") company: String): CompanyOverview? {
 
         val url = "https://www.alphavantage.co/query?function=OVERVIEW&symbol=$company&apikey=MJJOQAOKEG01QH2M"
-        val data = RestTemplate().getForObject(url, String::class.java);
+        val data = RestTemplate().getForObject(url, String::class.java)
 
-        return mapper.readValue(data, CompanyOverview::class.java);
+        return mapper.readValue(data, CompanyOverview::class.java)
     }
 }
