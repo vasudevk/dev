@@ -1,10 +1,21 @@
 package io.dev.core;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.dev.objects.Demo;
+
 import java.util.Arrays;
 
 public class ArraysDemo {
 
     public static void main(String[] args) {
+
+        Demo demo = null;
+
+        JsonNode node = null;
+        if (null!=node && node.isNull() && !node.isEmpty())
+            node = new ObjectMapper().convertValue(demo, JsonNode.class);
+
 
         final int[] x = {1, 2, 3, 4};
         /* x cannot be assigned a new value since it is final. uncomment below & check */

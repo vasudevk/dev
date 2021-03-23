@@ -1,7 +1,9 @@
 package io.dev.core;
 
+import java.text.MessageFormat;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.function.Consumer;
 
 public class StringDemo {
 
@@ -50,6 +52,12 @@ public class StringDemo {
 
         System.out.println("Is the given string a pangram :: " + isPangramString(dog));
         System.out.println("Is the given string a pangram :: " + isPangramString(ivory.toLowerCase()));
+
+
+        var textToFormat = "{0} Account Verification Passed with the following information:" +
+                "Dealer code is:  {1}, Store ID is: {2},Caller name is: {3}. - Memo Created By: {4} - updated by {5}";
+
+        format.accept(textToFormat);
     }
 
 
@@ -65,4 +73,10 @@ public class StringDemo {
         }
         return true;
     }
+
+    static Consumer<String> format = f -> {
+        f = MessageFormat.format(f, (Object[]) new String[]{"MANUAL", "rslDealerID", "rslStoreId", "rslDealerName",
+                "applicationUserId", "applicationUserId"});
+        System.out.println(f);
+    };
 }
